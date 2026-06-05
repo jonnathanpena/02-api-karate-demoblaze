@@ -12,6 +12,8 @@ class DemoblazeRunner {
 
     @Test
     void testAuthFlow() {
-        Karate.run("classpath:demoblaze/auth.feature").relativeTo(getClass());
+        Karate.run("classpath:demoblaze/auth.feature")
+            .relativeTo(getClass())
+            .outputCucumberJson(true);
     }
 }
