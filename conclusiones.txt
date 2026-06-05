@@ -1,0 +1,45 @@
+CONCLUSIONES - API Karate (Demoblaze)
+======================================
+
+ESCENARIOS IMPLEMENTADOS
+------------------------
+1. [SIGNUP] Crear usuario nuevo                    -> status 200, body null/vacio
+2. [SIGNUP] Crear usuario duplicado               -> status 200, body "This user already exist."
+3. [LOGIN]  Credenciales correctas                -> status 200, token en body
+4. [LOGIN]  Credenciales incorrectas              -> status 200, "Wrong password."
+
+HALLAZGOS DEL API
+-----------------
+1. STATUS CODE NO SEMANTICO:
+   La API de Demoblaze retorna HTTP 200 tanto para exito como para error.
+   Esto viola el principio REST de usar codigos HTTP semanticos
+   (deberia retornar 409 Conflict para usuario duplicado, 401 para
+   credenciales invalidas). Es un hallazgo de calidad de API importante.
+
+2. BODY DE RESPUESTA INCONSISTENTE:
+   - Signup exitoso: body null o vacio (no hay confirmacion)
+   - Signup fallido: body = string plano "This user already exist."
+   - Login exitoso:  body = token de sesion (string)
+   - Login fallido:  body = string plano "Wrong password."
+   Sin estructura JSON consistente. Dificulta la automatizacion robusta.
+
+3. PASSWORD EN TEXTO PLANO:
+   La API recibe la password sin encriptar en el body JSON.
+   Riesgo de seguridad: passwords expuestas en trafico HTTP/logs.
+   RECOMENDACION: usar HTTPS (ya implementado) + cifrado en cliente.
+
+4. SIN VALIDACION DE COMPLEJIDAD:
+   El endpoint signup no valida complejidad de password ni
+   formato de username. Cualquier string es aceptado.
+
+5. KARATE DSL - VALORACION:
+   Karate demostro ser ideal para pruebas de API: sintaxis expresiva,
+   soporte nativo de JSON/XML, no requiere codigo Java adicional para
+   los assertions, y genera reporte HTML automaticamente.
+
+RECOMENDACIONES
+---------------
+- Agregar validacion de schema JSON con match schema para cada respuesta.
+- Parametrizar datos de prueba con un archivo CSV o tabla de ejemplos.
+- Integrar en CI/CD para ejecucion en cada merge.
+- Reportar al equipo de desarrollo los hallazgos 1, 2, 3 como bugs/mejoras.
