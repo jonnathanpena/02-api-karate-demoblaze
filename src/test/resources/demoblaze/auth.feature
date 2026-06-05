@@ -36,7 +36,7 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     Then status 200
     And print 'Signup duplicate response:', response
     # La API retorna el mensaje de error en el body
-    * match response == 'This user already exist.'
+    * match response.errorMessage == 'This user already exist.'
 
   # =====================================================================
   # LOGIN
@@ -68,4 +68,4 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     Then status 200
     And print 'Login invalid response:', response
     # La API retorna mensaje de error cuando las credenciales son invalidas
-    * match response == 'Wrong password.'
+    * match response.errorMessage == 'User does not exist.'

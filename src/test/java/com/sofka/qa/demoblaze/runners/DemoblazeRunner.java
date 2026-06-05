@@ -1,7 +1,6 @@
 package com.sofka.qa.demoblaze.runners;
 
 import com.intuit.karate.junit5.Karate;
-import org.junit.jupiter.api.Test;
 
 /**
  * Runner JUnit 5 para ejecutar los features de Karate de Demoblaze.
@@ -10,10 +9,9 @@ import org.junit.jupiter.api.Test;
  */
 class DemoblazeRunner {
 
-    @Test
-    void testAuthFlow() {
-        Karate.run("classpath:demoblaze/auth.feature")
-            .relativeTo(getClass())
+    @Karate.Test
+    Karate testAuthFlow() {
+        return Karate.run("classpath:demoblaze/auth.feature")
             .outputCucumberJson(true);
     }
 }
