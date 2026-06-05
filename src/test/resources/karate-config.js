@@ -15,6 +15,10 @@ function fn() {
   karate.configure('connectTimeout', 10000);
   karate.configure('readTimeout', 15000);
   karate.configure('ssl', true);
+  
+  // Enable verbose logging
+  karate.configure('logPrettyRequest', true);
+  karate.configure('logPrettyResponse', true);
 
   return config;
 }
