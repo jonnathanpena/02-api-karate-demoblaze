@@ -1,8 +1,32 @@
+# Maven
 target/
 .mvn/wrapper/maven-wrapper.jar
 !.mvn/wrapper/maven-wrapper.properties
+
+# Java
 *.class
-*.log
-.DS_Store
+*.jar
+*.war
+*.ear
+
+# IDE
 .idea/
 *.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Karate specific
+karate-reports/
+cucumber-html-reports/
+
+# OpenSpec internal (opcional, si no quieres subirlo)
+.openspec/
