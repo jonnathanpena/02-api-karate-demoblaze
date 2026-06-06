@@ -26,6 +26,7 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     # Demoblaze devuelve null en body cuando el signup es exitoso
     * def responseStr = response == null ? 'null' : response + ''
     * match responseStr != 'This user already exist.'
+    And match response == '#string'
 
   @signup @negativo
   Scenario: Intentar crear un usuario ya existente retorna error
@@ -37,6 +38,7 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     And print 'Signup duplicate response:', response
     # La API retorna el mensaje de error como objeto JSON
     * match response == {errorMessage: 'This user already exist.'}
+    And match response == read('classpath:demoblaze/schemas/error-response-schema.json')
 
   # =====================================================================
   # LOGIN
@@ -59,6 +61,7 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     # Login exitoso devuelve un token (string no nulo y no vacio)
     * match response != null
     * assert response.length > 0
+    And match response == '#string'
 
   @login @negativo
   Scenario: Login con credenciales incorrectas retorna mensaje de error
@@ -69,3 +72,4 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     And print 'Login invalid response:', response
     # La API retorna mensaje de error cuando las credenciales son invalidas
     * match response == {errorMessage: 'User does not exist.'}
+    And match response == read('classpath:demoblaze/schemas/error-response-schema.json')
