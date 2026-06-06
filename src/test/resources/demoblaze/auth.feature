@@ -46,15 +46,10 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
 
   @login @positivo
   Scenario: Login con credenciales correctas retorna token de sesion
-    # Primero creamos el usuario para garantizar que existe
-    Given path '/signup'
-    And request { username: '#(nuevoUsuario)', password: '#(passValido)' }
-    When method POST
-    Then status 200
-
-    # Ahora hacemos login
+    # Prerrequisito de entorno: 'standard_test_user' es un usuario preexistente gestionado
+    # externamente (no por este escenario); la cuenta debe existir en Demoblaze antes de la ejecucion.
     Given path '/login'
-    And request { username: '#(nuevoUsuario)', password: '#(passValido)' }
+    And request { username: '#(usuarioExistente)', password: '#(passValido)' }
     When method POST
     Then status 200
     And print 'Login response:', response
