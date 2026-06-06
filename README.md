@@ -18,6 +18,7 @@ API bajo prueba: `https://api.demoblaze.com`
 |---|---|---|
 | Java | 21+ | `java -version` |
 | Maven Wrapper | incluido (`./mvnw`) | `./mvnw --version` |
+| Node.js | 18+ | `node -v` — requerido para Husky (git hooks) |
 | Conexión a internet | — | acceso a `api.demoblaze.com` |
 
 **Versiones clave de librerías:**
@@ -57,6 +58,48 @@ target/karate-reports/karate-summary.html
 
 ---
 
+## Git Hooks – Husky (pre-push)
+
+El proyecto usa **[Husky 9](https://typicode.github.io/husky/)** para instalar un hook `pre-push` que ejecuta la suite completa de Karate **antes de cada `git push`**. Esto impide subir al repositorio remoto código que rompa los tests existentes.
+
+### ¿Qué hace el hook?
+
+```sh
+# .husky/pre-push
+./mvnw test
+```
+
+Antes de completar cualquier `git push`, Git ejecuta `./mvnw test`. Si algún escenario Karate falla, el push se **cancela automáticamente** y se muestra el reporte de error en la terminal.
+
+### Setup inicial (una sola vez por clon)
+
+> **Requisito:** Node.js ≥ 18 instalado (`node -v`).
+
+```bash
+npm install
+```
+
+El script `prepare` de `package.json` ejecuta `husky` automáticamente, configurando `core.hooksPath = .husky/_` y generando los stubs de todos los hooks de Git.
+
+### Verificar que el hook está activo
+
+```bash
+git config core.hooksPath
+# Salida esperada: .husky/_
+```
+
+Husky 9 configura Git con `core.hooksPath = .husky/_` en lugar de copiar archivos a `.git/hooks/`. Los stubs en `.husky/_/` delegan automáticamente a los scripts en `.husky/` (ej: `.husky/pre-push`).
+
+### Omitir el hook puntualmente (no recomendado)
+
+```bash
+git push --no-verify
+```
+
+> ⚠️ Usar `--no-verify` solo en casos excepcionales (ej: push de documentación pura). **Nunca** para saltarse tests que fallan.
+
+---
+
 ## Estructura del proyecto
 
 ```
@@ -64,6 +107,8 @@ target/karate-reports/karate-summary.html
 ├── .github/
 │   └── workflows/
 │       └── karate-tests.yml          # Pipeline CI/CD (GitHub Actions)
+├── .husky/
+│   └── pre-push                      # Hook: ejecuta ./mvnw test antes de cada push
 ├── src/
 │   └── test/
 │       ├── java/
@@ -73,6 +118,7 @@ target/karate-reports/karate-summary.html
 │           ├── karate-config.js          # Configuración global (URL base, timeouts)
 │           └── demoblaze/
 │               └── auth.feature          # Los 4 escenarios de prueba
+├── package.json                      # Husky como devDependency
 ├── pom.xml
 └── README.md
 ```

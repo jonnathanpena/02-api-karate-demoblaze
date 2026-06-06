@@ -28,6 +28,9 @@ Thumbs.db
 !target/karate-reports/
 cucumber-html-reports/
 
+# Node / Husky
+node_modules/
+
 # Spec files
 openspec/
 .devin/

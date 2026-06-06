@@ -1,0 +1,12 @@
+{
+  "name": "api-karate-demoblaze",
+  "version": "1.0.0",
+  "description": "Git hooks para la suite de pruebas API Karate – Demoblaze",
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
