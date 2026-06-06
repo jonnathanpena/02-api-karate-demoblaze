@@ -109,3 +109,55 @@ La API recibe la contraseña sin cifrar en el body JSON. Riesgo de exposición e
 
 ### 4. Sin validación de entrada
 El endpoint `/signup` no valida complejidad de contraseña ni formato de nombre de usuario. Cualquier string es aceptado sin restricción.
+
+### 5. Sin validación de payload vacío
+`/signup` acepta `username: ""` y `password: ""` devolviendo `200 OK` sin mensaje de error, lo que permite registrar credenciales vacías en la base de datos.
+
+---
+
+## Decisiones de diseño técnico
+
+| Decisión | Justificación |
+|---|---|
+| **Username dinámico con `timestamp()`** | `java.lang.System.currentTimeMillis()` en el `Background` garantiza un usuario único por ejecución, eliminando colisiones en runs paralelos o consecutivos de CI |
+| **`standard_test_user` fijo para signup duplicado** | Usuario predefinido y permanente que garantiza reproducibilidad del escenario negativo sin dependencias entre tests |
+| **`karate-config.js` con soporte multi-entorno** | Permite apuntar a `dev`, `staging` u otras URLs vía `-Dkarate.env=staging` sin modificar un solo feature file |
+| **Tags combinados (`@signup @positivo`)** | Ejecución granular por endpoint O por tipo de prueba; un pipeline CI puede correr solo `@positivo` (smoke) en < 30 s |
+| **`logPrettyRequest/Response: true`** | Logging estructurado de request y response en cada step; debugging sin instrumentación adicional ni herramientas externas |
+| **`ssl: true` en configuración** | Fuerza validación del certificado TLS; cualquier downgrade a HTTP plano fallaría en el handshake, detectando configuraciones inseguras |
+| **`connectTimeout: 10 000 ms` / `readTimeout: 15 000 ms`** | Valores conservadores para una API pública de demo; detectan degradación sin falsos positivos por latencia de red |
+
+---
+
+## Arquitectura del runner
+
+Karate 1.4.x con JUnit 5 requiere el patrón `@Karate.Test Karate` (tipo de retorno + anotación) para que los fallos internos de Karate se propaguen como fallos JUnit y el pipeline CI falle correctamente:
+
+```java
+// ✅ Patrón correcto — fallos de Karate se propagan a JUnit
+@Karate.Test
+Karate testAuthFlow() {
+    return Karate.run("classpath:demoblaze/auth.feature")
+        .relativeTo(getClass())
+        .outputCucumberJson(true);
+}
+```
+
+Sin el tipo de retorno `Karate` y `@Karate.Test`, un `@Test void` construye el builder pero **nunca lo ejecuta**: JUnit no recibe excepción → `BUILD SUCCESS` aunque existan fallos internos de Karate. Verificar siempre el reporte en `target/karate-reports/karate-summary.html` tras cada ejecución.
+
+---
+
+## CI/CD – GitHub Actions
+
+Pipeline configurado en `.github/workflows/karate-tests.yml`:
+
+| Parámetro | Valor |
+|---|---|
+| **Trigger** | `push` y `pull_request` a `main` |
+| **Runner** | `ubuntu-latest` |
+| **Java** | `21` (distribution `temurin`) |
+| **Comando** | `./mvnw test` |
+| **Artefacto** | Reporte HTML de Karate (`target/karate-reports/`) publicado como artifact descargable por 30 días |
+| **Fallo de pipeline** | Automático si algún escenario Karate falla (propagado vía `@Karate.Test`) |
+
+Estado actual del pipeline visible en el badge al inicio de este documento.
