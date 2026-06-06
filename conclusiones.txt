@@ -16,12 +16,19 @@ HALLAZGOS DEL API
    (deberia retornar 409 Conflict para usuario duplicado, 401 para
    credenciales invalidas). Es un hallazgo de calidad de API importante.
 
-2. BODY DE RESPUESTA INCONSISTENTE:
-   - Signup exitoso: body null o vacio (no hay confirmacion)
-   - Signup fallido: body = string plano "This user already exist."
-   - Login exitoso:  body = token de sesion (string)
-   - Login fallido:  body = string plano "Wrong password."
-   Sin estructura JSON consistente. Dificulta la automatizacion robusta.
+2. BODY DE RESPUESTA Y CONTENT-TYPE:
+   - Signup exitoso: body null o vacio (no hay confirmacion), Content-Type: application/json
+   - Signup fallido: body JSON {"errorMessage": "This user already exist."}, Content-Type: application/json
+   - Login exitoso:  body = token de sesion (string), Content-Type: application/json
+   - Login fallido (usuario inexistente): body JSON {"errorMessage": "User does not exist."}, Content-Type: application/json
+   - Login fallido (password incorrecta): body JSON {"errorMessage": "Wrong password."}, Content-Type: application/json
+   La API retorna application/json en todos los casos; Karate parsea el body automaticamente.
+   Los escenarios negativos usan match de objeto completo: match response == {errorMessage: '...'}.
+
+   NOTA: Documentacion previa indicaba que los cuerpos de error eran strings planos (text/plain),
+   lo cual era incorrecto. Pruebas reales confirmaron que el Content-Type es application/json y
+   el body es un objeto JSON en todos los escenarios, lo que permite aserciones directas sobre
+   campos del objeto sin necesidad de parseo explicito (karate.fromString no aplica aqui).
 
 3. PASSWORD EN TEXTO PLANO:
    La API recibe la password sin encriptar en el body JSON.
