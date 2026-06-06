@@ -19,7 +19,7 @@
 
 ## 4. Integrar y validar en GitHub
 
-- [ ] 4.1 Hacer commit del archivo `.github/workflows/karate-tests.yml` con un mensaje descriptivo
+- [x] 4.1 Hacer commit del archivo `.github/workflows/karate-tests.yml` con un mensaje descriptivo
 - [ ] 4.2 Hacer push a `main` o abrir un Pull Request apuntando a `main` para disparar el workflow
 - [ ] 4.3 Verificar en la pestaña **Actions** de GitHub que el job `karate-tests` se ejecuta correctamente
 - [ ] 4.4 Confirmar que el artefacto `karate-reports` aparece como descargable en el resumen del run
