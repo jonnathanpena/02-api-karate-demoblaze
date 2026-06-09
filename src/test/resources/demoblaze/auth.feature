@@ -23,10 +23,8 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     When method POST
     Then status 200
     And print 'Signup response:', response
-    # Demoblaze devuelve null en body cuando el signup es exitoso
-    * def responseStr = response == null ? 'null' : response + ''
-    * match responseStr != 'This user already exist.'
-    And match response == '#string'
+    # Demoblaze devuelve null o body vacio/whitespace en signup exitoso (sin confirmacion)
+    And match response == '##string'
 
   @signup @negativo
   Scenario: Intentar crear un usuario ya existente retorna error
@@ -54,17 +52,20 @@ Feature: Autenticacion en Demoblaze (Signup y Login)
     Then status 200
     And print 'Login response:', response
     # Login exitoso devuelve un token (string no nulo y no vacio)
-    * match response != null
-    * assert response.length > 0
-    And match response == '#string'
+    And match response == read('classpath:demoblaze/schemas/login-token-schema.json')
+    * def isValidToken = function(s) { return s != null && s.indexOf('Auth_token:') >= 0 }
+    * assert isValidToken(response)
 
   @login @negativo
-  Scenario: Login con credenciales incorrectas retorna mensaje de error
+  Scenario Outline: Login con credenciales invalidas retorna mensaje de error
     Given path '/login'
-    And request { username: 'usuario_inexistente_xyz', password: 'clave_incorrecta' }
+    And request { username: '<username>', password: '<password>' }
     When method POST
     Then status 200
     And print 'Login invalid response:', response
     # La API retorna mensaje de error cuando las credenciales son invalidas
-    * match response == {errorMessage: 'User does not exist.'}
+    * match response == {errorMessage: '<errorMessage>'}
     And match response == read('classpath:demoblaze/schemas/error-response-schema.json')
+
+    Examples:
+    | read('classpath:demoblaze/data/invalid-login-credentials.csv') |

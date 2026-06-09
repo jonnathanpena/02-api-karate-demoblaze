@@ -38,7 +38,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">4</div>
+      <div id="nav-pass" class="bg-success">7</div>
       <div id="nav-fail" class="bg-danger">0</div>
     </div>
   </div>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-06-05 08:39:04 PM</div>
+    <div>2026-06-09 02:00:08 PM</div>
   </div>
 </div>
 
@@ -58,13 +58,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
             <a href="#[1:20]"><span>[1:20]</span> <span>Crear un nuevo usuario exitosamente</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[2:32]"><span>[2:32]</span> <span>Intentar crear un usuario ya existente retorna error</span></a>
+            <a href="#[2:30]"><span>[2:30]</span> <span>Intentar crear un usuario ya existente retorna error</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[3:48]"><span>[3:48]</span> <span>Login con credenciales correctas retorna token de sesion</span></a>
+            <a href="#[3:46]"><span>[3:46]</span> <span>Login con credenciales correctas retorna token de sesion</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[4:62]"><span>[4:62]</span> <span>Login con credenciales incorrectas retorna mensaje de error</span></a>
+            <a href="#[4.1:71]"><span>[4.1:71]</span> <span>Login con credenciales invalidas retorna mensaje de error</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4.2:71]"><span>[4.2:71]</span> <span>Login con credenciales invalidas retorna mensaje de error</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4.3:71]"><span>[4.3:71]</span> <span>Login con credenciales invalidas retorna mensaje de error</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4.4:71]"><span>[4.4:71]</span> <span>Login con credenciales invalidas retorna mensaje de error</span></a>
           </div>
         </div>
       </div>
@@ -90,7 +99,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>663</span>
+              <span>ms:</span>&nbsp;<span>1409</span>
             </div>
           </div>
           <div class="step-row">
@@ -122,7 +131,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8">20:39:02.561 Entorno activo: dev 
+  <div class="preformatted" data-parent="0.8">14:00:00.612 Entorno activo: dev 
 </div>   
 
   
@@ -205,7 +214,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def passValido = &#39;SofkaQ4Test!&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -289,7 +298,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request { username: &#39;#(nuevoUsuario)&#39;, password: &#39;#(passValido)&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">24</div>
+    <div class="time-cell passed">27</div>
   </div>
 
    
@@ -317,7 +326,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">609</div>
+    <div class="time-cell passed">1355</div>
   </div>
 
    
@@ -326,7 +335,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">20:39:02.765 request:
+  <div class="preformatted" data-parent="0.23">14:00:00.833 request:
 1 &gt; POST https://api.demoblaze.com/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 63
@@ -335,16 +344,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
 1 &gt; Accept-Encoding: gzip,deflate
 {
-  &quot;username&quot;: &quot;sofka_qa_1780709942681&quot;,
+  &quot;username&quot;: &quot;sofka_qa_1781031600741&quot;,
   &quot;password&quot;: &quot;SofkaQ4Test!&quot;
 }
 
 
-20:39:03.316 response time in milliseconds: 544
+14:00:02.124 response time in milliseconds: 1286
 1 &lt; 200
 1 &lt; content-type: application/json
-1 &lt; x-cloud-trace-context: 4346ddb682d77e882e511b43d055b19f
-1 &lt; date: Sat, 06 Jun 2026 01:39:03 GMT
+1 &lt; x-cloud-trace-context: 5e55becff4f0ac55c4cc3b9a3ab731a9
+1 &lt; date: Tue, 09 Jun 2026 19:00:01 GMT
 1 &lt; server: Google Frontend
 1 &lt; Content-Length: 3
 &quot;&quot;
@@ -369,7 +378,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -406,7 +415,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.25">20:39:03.322 [print] Signup response: &quot;&quot;
+  <div class="preformatted" data-parent="0.25">14:00:02.131 [print] Signup response: &quot;&quot;
  
 </div>   
 
@@ -421,7 +430,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div class="step-container">
       <div class="step-ref passed"></div>
       
-      <div class="step-cell comment"># Demoblaze devuelve null en body cuando el signup es exitoso</div>
+      <div class="step-cell comment"># Demoblaze devuelve null o body vacio/whitespace en signup exitoso (sin confirmacion)</div>
     </div>
     <div class="time-cell comment"></div>            
   </div>
@@ -431,66 +440,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">27</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def responseStr = response == null ? &#39;null&#39; : response + &#39;&#39;</span>
+        <span>And</span>&nbsp;<span>match response == &#39;##string&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.28">
-      <div class="step-ref passed">28</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>match responseStr != &#39;This user already exist.&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">7</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.29">
-      <div class="step-ref passed">29</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response == &#39;#string&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">9</div>
   </div>
 
    
@@ -507,29 +460,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[2:32]">
+          <div class="scenario-heading" id="[2:30]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">negativo</a><a class="badge badge-primary" href="karate-tags.html">signup</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[2:32]</span>
+                Scenario: <span>[2:30]</span>
                 <span class="scenario-name">Intentar crear un usuario ya existente retorna error</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>300</span>
+              <span>ms:</span>&nbsp;<span>946</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[2:32]bg">
+            <div class="step-container" id="[2:30]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[2:32]bg"><div>
+          <div data-parent="[2:30]bg"><div>
   
 
   
@@ -551,14 +504,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8">20:39:03.341 Entorno activo: dev 
+  <div class="preformatted" data-parent="0.8">14:00:02.150 Entorno activo: dev 
 </div>   
 
   
 
 </div>
 </div>
-          <div data-parent="[2:32]bg"><div>
+          <div data-parent="[2:30]bg"><div>
   
 
   <div class="step-row">
@@ -593,7 +546,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:32]bg"><div>
+          <div data-parent="[2:30]bg"><div>
   
 
   
@@ -621,7 +574,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:32]bg"><div>
+          <div data-parent="[2:30]bg"><div>
   
 
   
@@ -649,7 +602,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:32]bg"><div>
+          <div data-parent="[2:30]bg"><div>
   
 
   
@@ -683,8 +636,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.33">
-      <div class="step-ref passed">33</div>
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/signup&#39;</span>
@@ -718,8 +671,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.35">
-      <div class="step-ref passed">35</div>
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;#(usuarioExistente)&#39;, password: &#39;#(passValido)&#39; }</span>
@@ -746,14 +699,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.36">
-      <div class="step-ref passed">36</div>
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">291</div>
+    <div class="time-cell passed">937</div>
   </div>
 
    
@@ -762,7 +715,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.36">20:39:03.348 request:
+  <div class="preformatted" data-parent="0.34">14:00:02.158 request:
 1 &gt; POST https://api.demoblaze.com/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 59
@@ -776,12 +729,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 }
 
 
-20:39:03.637 response time in milliseconds: 288
+14:00:03.093 response time in milliseconds: 934
 1 &lt; 200
 1 &lt; content-type: application/json
 1 &lt; vary: Accept-Encoding
-1 &lt; x-cloud-trace-context: 7a829d51418ce40c70aaa7b47026878c
-1 &lt; date: Sat, 06 Jun 2026 01:39:03 GMT
+1 &lt; x-cloud-trace-context: 9ccab1872d6a3c5741000a0e6a1e86f0
+1 &lt; date: Tue, 09 Jun 2026 19:00:02 GMT
 1 &lt; server: Google Frontend
 1 &lt; Transfer-Encoding: chunked
 {
@@ -801,8 +754,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.37">
-      <div class="step-ref passed">37</div>
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 200</span>
@@ -829,14 +782,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.38">
-      <div class="step-ref passed">38</div>
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>print &#39;Signup duplicate response:&#39;, response</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -845,7 +798,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.38">20:39:03.640 [print] Signup duplicate response: {
+  <div class="preformatted" data-parent="0.36">14:00:03.095 [print] Signup duplicate response: {
   &quot;errorMessage&quot;: &quot;This user already exist.&quot;
 }
  
@@ -868,8 +821,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.40">
-      <div class="step-ref passed">40</div>
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>match response == {errorMessage: &#39;This user already exist.&#39;}</span>
@@ -896,8 +849,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.41">
-      <div class="step-ref passed">41</div>
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response == read(&#39;classpath:demoblaze/schemas/error-response-schema.json&#39;)</span>
@@ -920,29 +873,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[3:48]">
+          <div class="scenario-heading" id="[3:46]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">positivo</a><a class="badge badge-primary" href="karate-tags.html">login</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[3:48]</span>
+                Scenario: <span>[3:46]</span>
                 <span class="scenario-name">Login con credenciales correctas retorna token de sesion</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>347</span>
+              <span>ms:</span>&nbsp;<span>1733</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[3:48]bg">
+            <div class="step-container" id="[3:46]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[3:48]bg"><div>
+          <div data-parent="[3:46]bg"><div>
   
 
   
@@ -964,14 +917,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8">20:39:03.648 Entorno activo: dev 
+  <div class="preformatted" data-parent="0.8">14:00:03.105 Entorno activo: dev 
 </div>   
 
   
 
 </div>
 </div>
-          <div data-parent="[3:48]bg"><div>
+          <div data-parent="[3:46]bg"><div>
   
 
   <div class="step-row">
@@ -1006,7 +959,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:48]bg"><div>
+          <div data-parent="[3:46]bg"><div>
   
 
   
@@ -1034,7 +987,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:48]bg"><div>
+          <div data-parent="[3:46]bg"><div>
   
 
   
@@ -1062,7 +1015,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:48]bg"><div>
+          <div data-parent="[3:46]bg"><div>
   
 
   
@@ -1112,8 +1065,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.51">
-      <div class="step-ref passed">51</div>
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/login&#39;</span>
@@ -1140,11 +1093,92 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { username: &#39;#(usuarioExistente)&#39;, password: &#39;#(passValido)&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1711</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.51">14:00:03.111 request:
+1 &gt; POST https://api.demoblaze.com/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 59
+1 &gt; Host: api.demoblaze.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{
+  &quot;username&quot;: &quot;standard_test_user&quot;,
+  &quot;password&quot;: &quot;SofkaQ4Test!&quot;
+}
+
+
+14:00:04.820 response time in milliseconds: 1708
+1 &lt; 200
+1 &lt; content-type: application/json
+1 &lt; vary: Accept-Encoding
+1 &lt; x-cloud-trace-context: cde4ed482f0c5f136addd2debe237188
+1 &lt; date: Tue, 09 Jun 2026 19:00:04 GMT
+1 &lt; server: Google Frontend
+1 &lt; Transfer-Encoding: chunked
+&quot;Auth_token: c3RhbmRhcmRfdGVzdF91c2VyMTc4MTYzMQ==&quot;
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
     <div class="step-container" id="0.52">
       <div class="step-ref passed">52</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;#(usuarioExistente)&#39;, password: &#39;#(passValido)&#39; }</span>
+        <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1172,87 +1206,6 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">53</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method POST</span>
-      </div>
-    </div>
-    <div class="time-cell passed">338</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.53">20:39:03.652 request:
-1 &gt; POST https://api.demoblaze.com/login
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 59
-1 &gt; Host: api.demoblaze.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
-1 &gt; Accept-Encoding: gzip,deflate
-{
-  &quot;username&quot;: &quot;standard_test_user&quot;,
-  &quot;password&quot;: &quot;SofkaQ4Test!&quot;
-}
-
-
-20:39:03.989 response time in milliseconds: 335
-1 &lt; 200
-1 &lt; content-type: application/json
-1 &lt; vary: Accept-Encoding
-1 &lt; x-cloud-trace-context: 86f78ec748bd9a4e3c7078bbe44bf478
-1 &lt; date: Sat, 06 Jun 2026 01:39:04 GMT
-1 &lt; server: Google Frontend
-1 &lt; Transfer-Encoding: chunked
-&quot;Auth_token: c3RhbmRhcmRfdGVzdF91c2VyMTc4MTMwOQ==&quot;
-
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.54">
-      <div class="step-ref passed">54</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.55">
-      <div class="step-ref passed">55</div>
-      
-      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>print &#39;Login response:&#39;, response</span>
       </div>
     </div>
@@ -1265,7 +1218,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.55">20:39:03.991 [print] Login response: &quot;Auth_token: c3RhbmRhcmRfdGVzdF91c2VyMTc4MTMwOQ==&quot;
+  <div class="preformatted" data-parent="0.53">14:00:04.822 [print] Login response: &quot;Auth_token: c3RhbmRhcmRfdGVzdF91c2VyMTc4MTYzMQ==&quot;
  
 </div>   
 
@@ -1286,11 +1239,11 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.57">
-      <div class="step-ref passed">57</div>
+    <div class="step-container" id="0.55">
+      <div class="step-ref passed">55</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>match response != null</span>
+        <span>And</span>&nbsp;<span>match response == read(&#39;classpath:demoblaze/schemas/login-token-schema.json&#39;)</span>
       </div>
     </div>
     <div class="time-cell passed">2</div>
@@ -1314,14 +1267,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.58">
-      <div class="step-ref passed">58</div>
+    <div class="step-container" id="0.56">
+      <div class="step-ref passed">56</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>assert response.length &gt; 0</span>
+        <span>*</span>&nbsp;<span>def isValidToken = function(s) { return s != null &amp;&amp; s.indexOf(&#39;Auth_token:&#39;) &gt;= 0 }</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -1342,14 +1295,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.59">
-      <div class="step-ref passed">59</div>
+    <div class="step-container" id="0.57">
+      <div class="step-ref passed">57</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response == &#39;#string&#39;</span>
+        <span>*</span>&nbsp;<span>assert isValidToken(response)</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -1366,35 +1319,35 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[4:62]">
+          <div class="scenario-heading" id="[4.1:71]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">negativo</a><a class="badge badge-primary" href="karate-tags.html">login</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[4:62]</span>
-                <span class="scenario-name">Login con credenciales incorrectas retorna mensaje de error</span>
+                Scenario: <span>[4.1:71]</span>
+                <span class="scenario-name">Login con credenciales invalidas retorna mensaje de error</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>349</span>
+              <span>ms:</span>&nbsp;<span>935</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[4:62]bg">
+            <div class="step-container" id="[4.1:71]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[4:62]bg"><div>
+          <div data-parent="[4.1:71]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.8">
+    <div class="step-container" id="1.8">
       <div class="step-ref bg-step">8</div>
       
       <div class="step-cell passed">
@@ -1410,14 +1363,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8">20:39:04.002 Entorno activo: dev 
+  <div class="preformatted" data-parent="1.8">14:00:04.854 Entorno activo: dev 
 </div>   
 
   
 
 </div>
 </div>
-          <div data-parent="[4:62]bg"><div>
+          <div data-parent="[4.1:71]bg"><div>
   
 
   <div class="step-row">
@@ -1430,7 +1383,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.10">
+    <div class="step-container" id="1.10">
       <div class="step-ref bg-step">10</div>
       
       <div class="step-cell passed">
@@ -1452,13 +1405,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[4:62]bg"><div>
+          <div data-parent="[4.1:71]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.11">
+    <div class="step-container" id="1.11">
       <div class="step-ref bg-step">11</div>
       
       <div class="step-cell passed">
@@ -1480,13 +1433,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[4:62]bg"><div>
+          <div data-parent="[4.1:71]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.12">
+    <div class="step-container" id="1.12">
       <div class="step-ref bg-step">12</div>
       
       <div class="step-cell passed">
@@ -1508,13 +1461,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[4:62]bg"><div>
+          <div data-parent="[4.1:71]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.13">
+    <div class="step-container" id="1.13">
       <div class="step-ref bg-step">13</div>
       
       <div class="step-cell passed">
@@ -1542,8 +1495,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.63">
-      <div class="step-ref passed">63</div>
+    <div class="step-container" id="1.61">
+      <div class="step-ref passed">61</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/login&#39;</span>
@@ -1570,8 +1523,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.64">
-      <div class="step-ref passed">64</div>
+    <div class="step-container" id="1.62">
+      <div class="step-ref passed">62</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;usuario_inexistente_xyz&#39;, password: &#39;clave_incorrecta&#39; }</span>
@@ -1598,14 +1551,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.65">
-      <div class="step-ref passed">65</div>
+    <div class="step-container" id="1.63">
+      <div class="step-ref passed">63</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">327</div>
+    <div class="time-cell passed">928</div>
   </div>
 
    
@@ -1614,7 +1567,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.65">20:39:04.006 request:
+  <div class="preformatted" data-parent="1.63">14:00:04.858 request:
 1 &gt; POST https://api.demoblaze.com/login
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 68
@@ -1628,12 +1581,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 }
 
 
-20:39:04.331 response time in milliseconds: 324
+14:00:05.784 response time in milliseconds: 925
 1 &lt; 200
 1 &lt; content-type: application/json
 1 &lt; vary: Accept-Encoding
-1 &lt; x-cloud-trace-context: 2d440a258b78a19d6cf7670d61e0b942
-1 &lt; date: Sat, 06 Jun 2026 01:39:04 GMT
+1 &lt; x-cloud-trace-context: 72d83577c3fae2e4114def03e299c510
+1 &lt; date: Tue, 09 Jun 2026 19:00:05 GMT
 1 &lt; server: Google Frontend
 1 &lt; Transfer-Encoding: chunked
 {
@@ -1653,8 +1606,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.66">
-      <div class="step-ref passed">66</div>
+    <div class="step-container" id="1.64">
+      <div class="step-ref passed">64</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 200</span>
@@ -1681,8 +1634,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.67">
-      <div class="step-ref passed">67</div>
+    <div class="step-container" id="1.65">
+      <div class="step-ref passed">65</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>print &#39;Login invalid response:&#39;, response</span>
@@ -1697,7 +1650,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.67">20:39:04.336 [print] Login invalid response: {
+  <div class="preformatted" data-parent="1.65">14:00:05.787 [print] Login invalid response: {
   &quot;errorMessage&quot;: &quot;User does not exist.&quot;
 }
  
@@ -1710,24 +1663,17 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <div><div>
   
 
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># La API retorna mensaje de error cuando las credenciales son invalidas</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
+  
 
   <div class="step-row">
-    <div class="step-container" id="0.69">
-      <div class="step-ref passed">69</div>
+    <div class="step-container" id="1.67">
+      <div class="step-ref passed">67</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>match response == {errorMessage: &#39;User does not exist.&#39;}</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1748,14 +1694,1211 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.70">
-      <div class="step-ref passed">70</div>
+    <div class="step-container" id="1.68">
+      <div class="step-ref passed">68</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response == read(&#39;classpath:demoblaze/schemas/error-response-schema.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">13</div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4.2:71]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">negativo</a><a class="badge badge-primary" href="karate-tags.html">login</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4.2:71]</span>
+                <span class="scenario-name">Login con credenciales invalidas retorna mensaje de error</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1012</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4.2:71]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4.2:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.8">14:00:05.799 Entorno activo: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.2:71]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Usuario unico por ejecucion para evitar conflictos en signup</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="2.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def timestamp = function(){ return java.lang.System.currentTimeMillis() + &#39;&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.2:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def nuevoUsuario = &#39;sofka_qa_&#39; + timestamp()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.2:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def passValido = &#39;SofkaQ4Test!&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.2:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def usuarioExistente = &#39;standard_test_user&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/login&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { username: &#39;standard_test_user&#39;, password: &#39;pass_incorrecta_xyz&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.63">
+      <div class="step-ref passed">63</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1006</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.63">14:00:05.805 request:
+1 &gt; POST https://api.demoblaze.com/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 66
+1 &gt; Host: api.demoblaze.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{
+  &quot;username&quot;: &quot;standard_test_user&quot;,
+  &quot;password&quot;: &quot;pass_incorrecta_xyz&quot;
+}
+
+
+14:00:06.808 response time in milliseconds: 1002
+1 &lt; 200
+1 &lt; content-type: application/json
+1 &lt; vary: Accept-Encoding
+1 &lt; x-cloud-trace-context: 12bc56e84f23c0f0e631d6136f427207
+1 &lt; date: Tue, 09 Jun 2026 19:00:06 GMT
+1 &lt; server: Google Frontend
+1 &lt; Transfer-Encoding: chunked
+{
+  &quot;errorMessage&quot;: &quot;Wrong password.&quot;
+}
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print &#39;Login invalid response:&#39;, response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.65">14:00:06.811 [print] Login invalid response: {
+  &quot;errorMessage&quot;: &quot;Wrong password.&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match response == {errorMessage: &#39;Wrong password.&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == read(&#39;classpath:demoblaze/schemas/error-response-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4.3:71]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">negativo</a><a class="badge badge-primary" href="karate-tags.html">login</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4.3:71]</span>
+                <span class="scenario-name">Login con credenciales invalidas retorna mensaje de error</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>966</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4.3:71]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4.3:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.8">14:00:06.823 Entorno activo: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.3:71]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Usuario unico por ejecucion para evitar conflictos en signup</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="3.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def timestamp = function(){ return java.lang.System.currentTimeMillis() + &#39;&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.3:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def nuevoUsuario = &#39;sofka_qa_&#39; + timestamp()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.3:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def passValido = &#39;SofkaQ4Test!&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.3:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def usuarioExistente = &#39;standard_test_user&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/login&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { username: &#39;otro_usuario_no_registrado&#39;, password: &#39;SofkaQ4Test!&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.63">
+      <div class="step-ref passed">63</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">961</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.63">14:00:06.827 request:
+1 &gt; POST https://api.demoblaze.com/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 67
+1 &gt; Host: api.demoblaze.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{
+  &quot;username&quot;: &quot;otro_usuario_no_registrado&quot;,
+  &quot;password&quot;: &quot;SofkaQ4Test!&quot;
+}
+
+
+14:00:07.785 response time in milliseconds: 957
+1 &lt; 200
+1 &lt; content-type: application/json
+1 &lt; vary: Accept-Encoding
+1 &lt; x-cloud-trace-context: b26cccbf18c17e462f973bb40f5be122
+1 &lt; date: Tue, 09 Jun 2026 19:00:07 GMT
+1 &lt; server: Google Frontend
+1 &lt; Transfer-Encoding: chunked
+{
+  &quot;errorMessage&quot;: &quot;User does not exist.&quot;
+}
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print &#39;Login invalid response:&#39;, response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.65">14:00:07.788 [print] Login invalid response: {
+  &quot;errorMessage&quot;: &quot;User does not exist.&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match response == {errorMessage: &#39;User does not exist.&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == read(&#39;classpath:demoblaze/schemas/error-response-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4.4:71]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">negativo</a><a class="badge badge-primary" href="karate-tags.html">login</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4.4:71]</span>
+                <span class="scenario-name">Login con credenciales invalidas retorna mensaje de error</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>958</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4.4:71]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4.4:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.8">14:00:07.799 Entorno activo: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.4:71]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Usuario unico por ejecucion para evitar conflictos en signup</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="4.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def timestamp = function(){ return java.lang.System.currentTimeMillis() + &#39;&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.4:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def nuevoUsuario = &#39;sofka_qa_&#39; + timestamp()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.4:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def passValido = &#39;SofkaQ4Test!&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4.4:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def usuarioExistente = &#39;standard_test_user&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/login&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { username: &#39;standard_test_user&#39;, password: &#39;&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.63">
+      <div class="step-ref passed">63</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">953</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.63">14:00:07.804 request:
+1 &gt; POST https://api.demoblaze.com/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 47
+1 &gt; Host: api.demoblaze.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{
+  &quot;username&quot;: &quot;standard_test_user&quot;,
+  &quot;password&quot;: &quot;&quot;
+}
+
+
+14:00:08.755 response time in milliseconds: 950
+1 &lt; 200
+1 &lt; content-type: application/json
+1 &lt; vary: Accept-Encoding
+1 &lt; x-cloud-trace-context: 44f6c77a715ad4de631b5218c3b16d1a
+1 &lt; date: Tue, 09 Jun 2026 19:00:08 GMT
+1 &lt; server: Google Frontend
+1 &lt; Transfer-Encoding: chunked
+{
+  &quot;errorMessage&quot;: &quot;Wrong password.&quot;
+}
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print &#39;Login invalid response:&#39;, response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.65">14:00:08.757 [print] Login invalid response: {
+  &quot;errorMessage&quot;: &quot;Wrong password.&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match response == {errorMessage: &#39;Wrong password.&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == read(&#39;classpath:demoblaze/schemas/error-response-schema.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
   </div>
 
    

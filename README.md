@@ -117,7 +117,12 @@ git push --no-verify
 │       └── resources/
 │           ├── karate-config.js          # Configuración global (URL base, timeouts)
 │           └── demoblaze/
-│               └── auth.feature          # Los 4 escenarios de prueba
+│               ├── auth.feature          # 3 Scenarios + 1 Scenario Outline (7 ejecuciones)
+│               ├── data/
+│               │   └── invalid-login-credentials.csv  # Datos CSV para login negativo
+│               └── schemas/
+│                   ├── error-response-schema.json     # Schema respuestas de error
+│                   └── login-token-schema.json        # Schema token de login exitoso
 ├── package.json                      # Husky como devDependency
 ├── pom.xml
 └── README.md
@@ -129,10 +134,16 @@ git push --no-verify
 
 | # | Endpoint | Tipo | Tag | Status code esperado | Response body esperado |
 |---|---|---|---|---|---|
-| 1 | `/signup` | Positivo | `@signup @positivo` | `200` | `null` / vacío |
+| 1 | `/signup` | Positivo | `@signup @positivo` | `200` | `null` / vacío / whitespace (`##string`) |
 | 2 | `/signup` | Negativo | `@signup @negativo` | `200` | `{"errorMessage": "This user already exist."}` |
-| 3 | `/login` | Positivo | `@login @positivo` | `200` | token de sesión (string) |
-| 4 | `/login` | Negativo | `@login @negativo` | `200` | `{"errorMessage": "Wrong password."}` |
+| 3 | `/login` | Positivo | `@login @positivo` | `200` | token `Auth_token: <base64>` (schema + format check) |
+| 4a | `/login` | Negativo | `@login @negativo` | `200` | `{"errorMessage": "User does not exist."}` |
+| 4b | `/login` | Negativo | `@login @negativo` | `200` | `{"errorMessage": "Wrong password."}` |
+| 4c | `/login` | Negativo | `@login @negativo` | `200` | `{"errorMessage": "User does not exist."}` |
+| 4d | `/login` | Negativo | `@login @negativo` | `200` | `{"errorMessage": "Wrong password."}` |
+
+> Escenarios 4a–4d son filas del `Scenario Outline` parametrizado desde `invalid-login-credentials.csv`.
+> **Total:** 7 escenarios ejecutados (`Tests run: 7, Failures: 0`).
 
 ---
 
@@ -159,6 +170,9 @@ El endpoint `/signup` no valida complejidad de contraseña ni formato de nombre 
 ### 5. Sin validación de payload vacío
 `/signup` acepta `username: ""` y `password: ""` devolviendo `200 OK` sin mensaje de error, lo que permite registrar credenciales vacías en la base de datos.
 
+### 6. HTTP 500 en `/login` con username vacío
+`/login` con `{"username": "", "password": "cualquiera"}` devuelve **HTTP 500 Internal Server Error** en lugar de `200` + mensaje de error. El backend no valida la entrada antes de procesarla, causando un crash del servidor. Severidad: **alta** — exploitable para DoS o leakage de stack traces.
+
 ---
 
 ## Decisiones de diseño técnico
@@ -166,6 +180,9 @@ El endpoint `/signup` no valida complejidad de contraseña ni formato de nombre 
 | Decisión | Justificación |
 |---|---|
 | **Username dinámico con `timestamp()`** | `java.lang.System.currentTimeMillis()` en el `Background` garantiza un usuario único por ejecución, eliminando colisiones en runs paralelos o consecutivos de CI |
+| **`##string` en signup positivo** | El matcher opcional `##string` (null-o-string) es el correcto para un body que puede ser `null`, vacío o whitespace — el API retorna `\n` en signup exitoso |
+| **`Scenario Outline` + CSV para login negativo** | Reemplaza el escenario único hardcodeado por 4 filas parametrizadas desde `invalid-login-credentials.csv`; añadir nuevos casos no requiere tocar el feature file |
+| **Schema file `login-token-schema.json` + `isValidToken`** | El schema valida que la respuesta sea un string; la función JS valida el prefijo `Auth_token:` — separación de responsabilidades tipo/formato |
 | **`standard_test_user` fijo para signup duplicado** | Usuario predefinido y permanente que garantiza reproducibilidad del escenario negativo sin dependencias entre tests |
 | **`karate-config.js` con soporte multi-entorno** | Permite apuntar a `dev`, `staging` u otras URLs vía `-Dkarate.env=staging` sin modificar un solo feature file |
 | **Tags combinados (`@signup @positivo`)** | Ejecución granular por endpoint O por tipo de prueba; un pipeline CI puede correr solo `@positivo` (smoke) en < 30 s |

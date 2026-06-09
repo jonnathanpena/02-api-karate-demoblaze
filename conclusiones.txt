@@ -50,3 +50,66 @@ RECOMENDACIONES
 - Parametrizar datos de prueba con un archivo CSV o tabla de ejemplos.
 - Integrar en CI/CD para ejecucion en cada merge.
 - Reportar al equipo de desarrollo los hallazgos 1, 2, 3 como bugs/mejoras.
+
+======================================
+MEJORAS IMPLEMENTADAS (v2)
+Observaciones del validador de prueba
+======================================
+
+OBSERVACION 1 - CORRECCION: Match incorrecto en signup positivo
+----------------------------------------------------------------
+PROBLEMA: El escenario @signup @positivo usaba `match response == '#string'`
+pero la API no retorna un string con contenido en un signup exitoso.
+Investigacion real confirmo que el endpoint devuelve un body con solo
+un caracter de nueva linea ("\n"), no un string con contenido semantico.
+SOLUCION: Cambiado a `match response == '##string'` (Karate: null-o-string
+opcional). Este matcher es el correcto para un body que puede ser null,
+string vacio o whitespace segun el comportamiento real de la API.
+IMPACTO: El escenario ahora refleja el contrato real de la API y no
+producira falsos positivos si el backend cambia entre null y body vacio.
+
+OBSERVACION 2 - MEJORA: Validacion de schema para token de login exitoso
+------------------------------------------------------------------------
+PROBLEMA: El escenario @login @positivo no validaba el formato del token
+de sesion, solo que era un string no nulo.
+SOLUCION:
+  - Creado src/test/resources/demoblaze/schemas/login-token-schema.json
+    con schema Karate `"#string"` para validar tipo de respuesta.
+  - Agregada validacion de formato inline: funcion JS que verifica que
+    el token contenga el prefijo "Auth_token:" esperado por la API.
+  - El token real de Demoblaze tiene el formato:
+    `Auth_token: <base64-encoded-value>` (con salto de linea al final).
+IMPACTO: Detecta cambios de formato en el token sin necesidad de inspeccionar
+el reporte HTML; el test falla en CI si el prefijo del token cambia.
+
+HALLAZGO ADICIONAL - BUG DEL API: HTTP 500 con username vacio en login
+-----------------------------------------------------------------------
+Durante las pruebas de campos vacios en /login, se detecto que enviar
+un username vacio `{"username":"","password":"cualquiera"}` provoca
+una respuesta HTTP 500 (Internal Server Error) en lugar de 200 con
+mensaje de error. Esto evidencia falta de validacion de entrada en el
+backend. El endpoint /signup acepta campos vacios retornando 200, pero
+/login crashea el servidor con el mismo input.
+RECOMENDACION: Reportar al equipo de backend como bug de severidad alta:
+el servidor no deberia retornar 500 por input invalido.
+
+OBSERVACION 3 - MEJORA: Scenario Outline con CSV para credenciales invalidas
+-----------------------------------------------------------------------------
+PROBLEMA: El escenario @login @negativo tenia un unico caso hardcodeado
+(usuario inexistente + password incorrecto), sin cubrir otras combinaciones.
+SOLUCION:
+  - Reemplazado `Scenario` por `Scenario Outline` con tabla de Examples.
+  - Creado src/test/resources/demoblaze/data/invalid-login-credentials.csv
+    con 4 combinaciones parametrizadas:
+    1. Usuario inexistente + password incorrecta -> "User does not exist."
+    2. Usuario existente + password incorrecta   -> "Wrong password."
+    3. Usuario no registrado diferente           -> "User does not exist."
+    4. Usuario existente + password vacia        -> "Wrong password."
+  - La fila de username vacio fue excluida del CSV por el bug HTTP 500
+    descrito arriba (no es un caso negativo valido para 200).
+  - El runner ejecuta los 4 casos automaticamente via:
+    `Examples: | read('classpath:demoblaze/data/invalid-login-credentials.csv') |`
+IMPACTO: De 1 escenario negativo de login se pasa a 4 escenarios parametrizados.
+Agregar nuevas combinaciones solo requiere una fila nueva en el CSV.
+Total de escenarios ejecutados: 7 (2 signup + 1 login positivo + 4 login negativo).
+Resultado final: Tests run: 7, Failures: 0, Errors: 0 -- BUILD SUCCESS.
